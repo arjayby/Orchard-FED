@@ -1,4 +1,4 @@
-import { ButtonLink, Image, ImageDialog } from "./components/index";
+import { ButtonLink, Image, ImageDialog } from "./components";
 import { latestBlogsSectionData, mainSectionData } from "./data";
 
 export default function App() {
@@ -12,17 +12,17 @@ export default function App() {
   };
 
   return (
-    <div className="max-w-[1220px] container mx-auto my-44 text-white">
+    <div className="max-w-[1220px] container mx-auto my-44 px-4 text-white">
       <div className="my-44">
-        <div className="grid grid-cols-3 gap-6">
-          <div>
+        <div className="grid gap-3 lg:grid-cols-3 sm:grid-cols-2 sm:gap-6">
+          <div className="mx-auto">
             <ImageDialog {...mainSectionData.images[0]} />
           </div>
           <div className="flex flex-col gap-5">
             <ImageDialog {...mainSectionData.images[1]} />
             <ImageDialog {...mainSectionData.images[2]} />
           </div>
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <h1 className="text-[1.75rem] font-light">
               {mainSectionData.title}
             </h1>
@@ -42,7 +42,7 @@ export default function App() {
         <h2 className="mb-20 text-[2.75rem] font-thin text-center">
           ALL THE LATEST FROM AEG
         </h2>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid gap-16 lg:grid-cols-3 sm:grid-cols-2 sm:gap-6">
           {latestBlogsSectionData.map((blog) => (
             <div
               id={blog.title}
